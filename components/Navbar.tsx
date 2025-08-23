@@ -60,6 +60,9 @@ export default function Navbar() {
               <Link href="/collections" className="px-3 py-2 rounded-md text-sm font-medium hover:bg-white/10">
                 Collections
               </Link>
+              <Link href="/blog" className="px-3 py-2 rounded-md text-sm font-medium hover:bg-white/10">
+                Blog
+              </Link>
               <ThemeSwitcher />
             </div>
           </div>

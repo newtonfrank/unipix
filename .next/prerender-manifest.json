@@ -1,11 +1,1 @@
-{
-  "version": 4,
-  "routes": {},
-  "dynamicRoutes": {},
-  "notFoundRoutes": [],
-  "preview": {
-    "previewModeId": "645abdda632875c24f8371bac6b9e5b2",
-    "previewModeSigningKey": "cd69c814da012ba8ed4ea07fd654b5b71688cf826223d608a0c4f4629a81cadc",
-    "previewModeEncryptionKey": "6085a4f27cd7b31a133ae4acbadae7a100d1f416a6c2409797f44a75f9ef7001"
-  }
-}
+{"version":4,"routes":{"/blog/how-to-find-best-free-stock-images":{},"/blog/understanding-image-licenses":{},"/blog/top-10-sources-free-stock-photos-2023":{}},"dynamicRoutes":{"/blog/[slug]":{"dataRoute":null,"dataRouteRegex":null,"fallback":null,"fallbackRevalidate":false,"fallbackSourceRoute":"/blog/[slug]","routeRegex":"^\\/blog\\/([^/]+?)(?:\\/)?$","allowHeader":[]}},"notFoundRoutes":[],"preview":{"previewModeId":"75793d560164873ba27a2d62cc0339b6","previewModeSigningKey":"20bbacf5e56bc6f9e07611b54b82925abcb93b593da2a5e7a56757f011f618c4","previewModeEncryptionKey":"48212d8b274916743fd41333fb8512e80181397c0e39690ae25024a54aba29f2"}}
