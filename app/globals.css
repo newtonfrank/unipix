@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #0b0d12;
+  --foreground: #f2f5f9;
+  --muted: #9aa3b2;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  color: var(--foreground);
+  background: radial-gradient(1200px 800px at 50% -10%, #1b2230 0%, #0b0d12 60%);
+}
+
+.container {
+  @apply max-w-7xl mx-auto px-4;
+}
+
+a {
+  @apply underline-offset-4 hover:underline;
+}
