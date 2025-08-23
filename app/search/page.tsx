@@ -73,3 +73,5 @@ export default async function SearchPage({ searchParams }: { searchParams: Promi
     </div>
   )
 }
+
+export const revalidate = 60;

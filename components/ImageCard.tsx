@@ -42,7 +42,7 @@ export default function ImageCard({ item }: { item: UnifiedImage }) {
               {item.authorName}
             </Link>
           </div>
-          <div className="text-xs text-gray-400 truncate">
+          <div className="text-xs text-gray-400 dark:text-gray-300 truncate">
             <Link href={item.sourcePageUrl} target="_blank" className="no-underline hover:opacity-90">
               View on {item.provider.charAt(0).toUpperCase() + item.provider.slice(1)}
             </Link>

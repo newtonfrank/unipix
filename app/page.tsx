@@ -14,11 +14,11 @@ export default async function HomePage() {
   // For the hero section background image, we would ideally fetch a featured image
   // For now, we'll use a placeholder
   const heroImage = {
-    url: 'https://images.unsplash.com/photo-1755134148217-2dd89cc6a2c2?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    url: 'https://images.unsplash.com/photo-1750688650387-48fbdc7399b3',
     alt: 'Abstract',
     user: {
-      name: 'Martin Martz',
-      profileUrl: 'https://unsplash.com/@martz90'
+      name: 'Jonas Degener',
+      profileUrl: 'https://unsplash.com/@jonasdegener'
     }
   }
 
@@ -41,15 +41,31 @@ export default async function HomePage() {
 
   return (
     <div className="space-y-8">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "Unixpix",
+            "url": "https://unixpix.vercel.app",
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://unixpix.vercel.app/search?q={search_term_string}",
+              "query-input": "required name=search_term_string"
+            }
+          })
+        }}
+      />
       {/* Hero Section */}
       <div
-        className="relative overflow-hidden min-h-screen bg-cover bg-center flex items-center justify-center px-4"
+        className="relative overflow-hidden rounded-2xl h-96 bg-cover bg-center flex items-center justify-center px-4"
         style={{ backgroundImage: `url(${heroImage.url})` }}
       >
         <div className="absolute inset-0 bg-black/50"></div>
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Discover Stunning Free Images</h1>
-          <p className="text-lg md:text-xl mb-8 max-w-2xl">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">Discover Stunning Free Images</h1>
+          <p className="text-lg md:text-xl mb-8 max-w-2xl text-white">
             Search and browse high-quality images from Unsplash, Pexels, and Pixabay in one place.
           </p>
           

@@ -5,7 +5,7 @@ export default function CompliancePage() {
     <div className="prose prose-invert max-w-none">
       <h1>Compliance & Attribution</h1>
       <p>
-        Unixpix displays images from Unsplash, Pexels, and Pixabay via their official APIs. Images are hotlinked from the providers’ CDNs and are not hosted on this site. Downloads are completed on the provider websites.
+        Unipix displays images from Unsplash, Pexels, and Pixabay via their official APIs. Images are hotlinked from the providers’ CDNs and are not hosted on this site. Downloads are completed on the provider websites.
       </p>
       <h2>Attribution</h2>
       <ul>

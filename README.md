@@ -1,4 +1,4 @@
-# Unixpix
+# Unipix
 A legal-compliant, display-only multi-source free image finder built on Next.js (App Router + TypeScript). It fetches images from Unsplash, Pexels, and Pixabay and redirects users to the original provider page to download.
 
 ## Features
@@ -22,7 +22,7 @@ Then open http://localhost:3000
 - `UNSPLASH_ACCESS_KEY` (required)
 - `PEXELS_API_KEY` (required)
 - `PIXABAY_API_KEY` (required)
-- `APP_NAME` (default: Unixpix) — used for UTM on Unsplash links.
+- `APP_NAME` (default: Unipix) — used for UTM on Unsplash links.
 
 ## Notes on Compliance
 - We **do not** mirror or bulk-redistribute originals.

@@ -3,8 +3,6 @@
 @tailwind utilities;
 
 :root {
-  --background: #0b0d12;
-  --foreground: #f2f5f9;
   --muted: #9aa3b2;
 }
 
@@ -13,8 +11,50 @@ html, body {
 }
 
 body {
-  color: var(--foreground);
+  @apply bg-background text-foreground;
   background: radial-gradient(1200px 800px at 50% -10%, #1b2230 0%, #0b0d12 60%);
+}
+
+body.light {
+  background: radial-gradient(1200px 800px at 50% -10%, #f8fafc 0%, #e2e8f0 60%);
+}
+
+body.dark {
+  background: radial-gradient(1200px 800px at 50% -10%, #1b2230 0%, #0b0d12 60%);
+}
+
+/* Theme-responsive navbar styles */
+.light nav {
+  @apply bg-white/20 backdrop-blur-sm border-b border-gray-200/20;
+}
+
+.dark nav {
+  @apply bg-black/20 backdrop-blur-sm border-b border-white/10;
+}
+
+.light nav a {
+  @apply text-gray-700 hover:bg-gray-100/50;
+}
+
+.dark nav a {
+  @apply text-gray-300 hover:bg-white/10;
+}
+
+/* Theme-responsive footer styles */
+.light footer {
+  @apply border-t border-gray-200/20;
+}
+
+.dark footer {
+  @apply border-t border-white/10;
+}
+
+.light footer p {
+  @apply text-gray-600;
+}
+
+.dark footer p {
+  @apply text-gray-400;
 }
 
 .container {
@@ -23,4 +63,73 @@ body {
 
 a {
   @apply underline-offset-4 hover:underline;
+}
+
+
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
