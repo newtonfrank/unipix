@@ -1,8 +1,7 @@
 node_modules
 .next
 .env.example
-.env.local.next/
-.next/
 .env.local
-.DS_Store
 .ds_store
+.DS_Store
+.next/
