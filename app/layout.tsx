@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   authors: [{ name: 'Unipix' }],
   creator: 'Unipix',
   publisher: 'Unipix',
+  icons: {
+    icon: '/favicon.ico',
+  },
   robots: {
     index: true,
     follow: true,
