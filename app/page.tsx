@@ -15,11 +15,11 @@ export default async function HomePage() {
   // For the hero section background image, we would ideally fetch a featured image
   // For now, we'll use a placeholder
   const heroImage = {
-    url: 'https://images.unsplash.com/photo-1750688650387-48fbdc7399b3',
+    url: 'https://images.unsplash.com/photo-1670884307115-ab10e0498cc6?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&dl=boliviainteligente-uzkTua45keU-unsplash.jpg&w=1920',
     alt: 'Abstract',
     user: {
-      name: 'Jonas Degener',
-      profileUrl: 'https://unsplash.com/@jonasdegener'
+      name: 'Boliviainteligente',
+      profileUrl: 'https://unsplash.com/@boliviainteligente'
     }
   }
 
