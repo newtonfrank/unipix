@@ -1,16 +1,16 @@
-import { interleaveRoundRobin } from '@/lib/merge'
-import { fetchUnsplashTrending, searchUnsplash } from '@/lib/providers/unsplash'
-import { fetchPexelsCurated } from '@/lib/providers/pexels'
-import { fetchPixabayTrending, searchPixabay } from '@/lib/providers/pixabay'
 import { checkEnv } from '@/lib/env'
 import ImageCard from '@/components/ImageCard'
 import Link from 'next/link'
 import { useState } from 'react'
+import { fetchDailyImages } from '@/lib/daily-images'
 
-export const revalidate = 300 // Revalidate every 5 minutes
+export const revalidate = 86400 // Revalidate every 24 hours (86400 seconds)
 
 export default async function HomePage() {
   checkEnv()
+  // Fetch daily images (changes every 24 hours)
+  const { featuredItems, trendingItems } = await fetchDailyImages();
+  
   // For the hero section background image, we would ideally fetch a featured image
   // For now, we'll use a placeholder
   const heroImage = {
@@ -21,23 +21,6 @@ export default async function HomePage() {
       profileUrl: 'https://unsplash.com/@jonasdegener'
     }
   }
-
-  // Fetch trending images
-  const [trendingU, trendingP, trendingX] = await Promise.all([
-    fetchUnsplashTrending(18),
-    fetchPexelsCurated(18), // Using curated as trending for Pexels
-    fetchPixabayTrending(18)
-  ])
-  const trendingItems = interleaveRoundRobin([trendingU, trendingP, trendingX])
-
-  // Fetch editor's picks (using search with 'featured' tag as a proxy)
-  // For Pexels, we already have fetchPexelsCurated which might be editor's picks
-  const [featuredU, featuredP, featuredX] = await Promise.all([
-    searchUnsplash('featured', 18), // Using search for featured on Unsplash
-    fetchPexelsCurated(18), // Using curated as editor's picks for Pexels
-    searchPixabay('featured', 18) // Using search for featured on Pixabay
-  ])
-  const featuredItems = interleaveRoundRobin([featuredU, featuredP, featuredX])
 
   return (
     <div className="space-y-8">
