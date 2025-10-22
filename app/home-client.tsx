@@ -161,7 +161,7 @@ export default function HomePageClient({ featuredItems, trendingItems, heroImage
             
             return (
             <motion.div 
-              key={item.id} 
+              key={`${item.provider}-${item.id}`} 
               className="break-inside-avoid"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -210,7 +210,7 @@ export default function HomePageClient({ featuredItems, trendingItems, heroImage
             
             return (
             <motion.div 
-              key={item.id} 
+              key={`${item.provider}-${item.id}`} 
               className="break-inside-avoid"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
