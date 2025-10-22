@@ -7,7 +7,7 @@ import ImageCard from '@/components/ImageCard'
 import Link from 'next/link'
 import { useState } from 'react'
 
-export const revalidate = 0
+export const revalidate = 300 // Revalidate every 5 minutes
 
 export default async function HomePage() {
   checkEnv()
@@ -24,9 +24,9 @@ export default async function HomePage() {
 
   // Fetch trending images
   const [trendingU, trendingP, trendingX] = await Promise.all([
-    fetchUnsplashTrending('trending', 18),
+    fetchUnsplashTrending(18),
     fetchPexelsCurated('trending', 18), // Using curated as trending for Pexels
-    fetchPixabayTrending('trending', 18)
+    fetchPixabayTrending(18)
   ])
   const trendingItems = interleaveRoundRobin([trendingU, trendingP, trendingX])
 

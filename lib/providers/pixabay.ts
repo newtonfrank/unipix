@@ -1,9 +1,9 @@
 import { env } from '@/lib/env'
 
-export async function fetchPixabayTrending(query: string, count: number) {
+export async function fetchPixabayTrending(count: number) {
   try {
     const response = await fetch(
-      `https://pixabay.com/api/?key=${env.PIXABAY_API_KEY}&q=${encodeURIComponent(query)}&per_page=${count}&order=popular`,
+      `https://pixabay.com/api/?key=${env.PIXABAY_API_KEY}&per_page=${count}&order=popular`,
       {
         headers: {
           'Accept': 'application/json'

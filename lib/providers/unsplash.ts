@@ -1,6 +1,6 @@
 import { env } from '@/lib/env'
 
-export async function fetchUnsplashTrending(query: string, count: number) {
+export async function fetchUnsplashTrending(count: number) {
   try {
     const response = await fetch(
       `https://api.unsplash.com/photos?per_page=${count}&order_by=popular`,
