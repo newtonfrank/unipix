@@ -1,11 +1,27 @@
-node_modules
-.next
-.env.example
-.env.local
-.ds_store
-.DS_Store
+# Dependencies
+node_modules/
+
+# Build output
 .next/
-*.log
-.cache/
 out/
 dist/
+.cache/
+
+# Environment files
+.env*
+!.env.example
+.env.local
+
+# Logs
+*.log
+
+# OS / system files
+.DS_Store
+.ds_store
+
+# IDE / editor settings
+.vscode/
+.idea/
+
+# Misc
+*.local
