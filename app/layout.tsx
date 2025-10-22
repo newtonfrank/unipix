@@ -56,22 +56,29 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="google-adsense-account" content="ca-pub-XXXXXXXXXXXXXXXX" />
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
           crossOrigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
       </head>
-      <body>
+      <body className="font-sans bg-background">
         <ThemeProvider
           defaultTheme="system"
           storageKey="ui-theme"
         >
-          <Navbar />
-          <main className="container py-8">
-            {children}
-          </main>
-          <footer className="border-t">
-            <div className="container py-6 text-sm">
-              <p>Images are displayed via provider APIs and are not hosted here. Use "Go to original" to download on the provider site.</p>
-              <p>© {new Date().getFullYear()} Unipix</p>
-            </div>
-          </footer>
+          <div className="min-h-screen bg-background">
+            <Navbar />
+            <main className="w-full p-6">
+              {children}
+            </main>
+            <footer className="border-t border-gray-700 dark:border-gray-800 bg-background w-full">
+              <div className="px-4 sm:px-6 lg:px-8 py-8">
+                <div className="text-sm text-gray-400 space-y-2">
+                  <p>Images are displayed via provider APIs and are not hosted here. Use "Go to original" to download on the provider site.</p>
+                  <p>© {new Date().getFullYear()} Unipix — Multi-source Free Image Finder</p>
+                </div>
+              </div>
+            </footer>
+          </div>
         </ThemeProvider>
       </body>
     </html>

@@ -4,6 +4,7 @@
 
 :root {
   --muted: #9aa3b2;
+  --dark-bg: #151515; /* Our custom dark background color */
 }
 
 html, body {
@@ -11,16 +12,17 @@ html, body {
 }
 
 body {
-  @apply bg-background text-foreground;
-  background: radial-gradient(1200px 800px at 50% -10%, #1b2230 0%, #0b0d12 60%);
+  @apply bg-background text-foreground font-sans;
+  background-color: #151515; /* Fallback dark background */
 }
 
 body.light {
   background: radial-gradient(1200px 800px at 50% -10%, #f8fafc 0%, #e2e8f0 60%);
+  background-color: #f8fafc; /* Light background */
 }
 
 body.dark {
-  background: radial-gradient(1200px 800px at 50% -10%, #1b2230 0%, #0b0d12 60%);
+  background-color: #151515; /* Dark background as requested */
 }
 
 /* Theme-responsive navbar styles */
@@ -29,7 +31,7 @@ body.dark {
 }
 
 .dark nav {
-  @apply bg-black/20 backdrop-blur-sm border-b border-white/10;
+  @apply bg-[#151515]/90 backdrop-blur-sm border-b border-white/10; /* Match navbar background with body */
 }
 
 .light nav a {
@@ -46,7 +48,7 @@ body.dark {
 }
 
 .dark footer {
-  @apply border-t border-white/10;
+  @apply border-t border-white/10 bg-[#151515]/50; /* Match footer background with body */
 }
 
 .light footer p {
@@ -65,9 +67,14 @@ a {
   @apply underline-offset-4 hover:underline;
 }
 
-
-
 @layer base {
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold text-gray-900 dark:text-white;
+  }
+}
+
+
+
   :root {
     --background: 0 0% 100%;
     --foreground: 0 0% 3.9%;
@@ -94,26 +101,27 @@ a {
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
+    --dark-bg: #151515; /* Our custom dark background color */
   }
   .dark {
-    --background: 0 0% 3.9%;
+    --background: 8 8% 9%; /* Much darker background - #151515 */
     --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
+    --card: 8 8% 12%;
     --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
+    --popover: 8 8% 12%;
     --popover-foreground: 0 0% 98%;
     --primary: 0 0% 98%;
     --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
+    --secondary: 8 8% 15%;
     --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
+    --muted: 8 8% 18%;
+    --muted-foreground: 0 0% 60%;
+    --accent: 8 8% 15%;
     --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
+    --border: 8 8% 20%;
+    --input: 8 8% 20%;
     --ring: 0 0% 83.1%;
     --chart-1: 220 70% 50%;
     --chart-2: 160 60% 45%;
@@ -121,7 +129,6 @@ a {
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
   }
-}
 
 
 
