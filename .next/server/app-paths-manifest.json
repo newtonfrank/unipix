@@ -1,16 +1,3 @@
 {
-  "/api/pixabay/search/route": "app/api/pixabay/search/route.js",
-  "/api/pexels/curated/route": "app/api/pexels/curated/route.js",
-  "/_not-found/page": "app/_not-found/page.js",
-  "/api/pixabay/trending/route": "app/api/pixabay/trending/route.js",
-  "/api/pexels/search/route": "app/api/pexels/search/route.js",
-  "/api/unsplash/track-download/route": "app/api/unsplash/track-download/route.js",
-  "/api/unsplash/trending/route": "app/api/unsplash/trending/route.js",
-  "/api/unsplash/search/route": "app/api/unsplash/search/route.js",
-  "/collections/page": "app/collections/page.js",
-  "/search/page": "app/search/page.js",
-  "/compliance/page": "app/compliance/page.js",
-  "/blog/[slug]/page": "app/blog/[slug]/page.js",
-  "/page": "app/page.js",
-  "/blog/page": "app/blog/page.js"
+  "/page": "app/page.js"
 }
