@@ -1,14 +1,16 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
+import { useSearchParams } from 'next/navigation';
 import ImageCard from '@/components/ImageCard';
 import { interleaveRoundRobin } from '@/lib/merge';
 
-export default function SearchPage({ searchParams }: { searchParams: { q?: string, u?: string, p?: string, x?: string } }) {
-  const q = (searchParams.q || '').trim();
-  const includeUnsplash = searchParams.u !== '0';
-  const includePexels = searchParams.p !== '0';
-  const includePixabay = searchParams.x !== '0';
+function SearchPageContent() {
+  const searchParams = useSearchParams();
+  const q = (searchParams.get('q') || '').trim();
+  const includeUnsplash = searchParams.get('u') !== '0';
+  const includePexels = searchParams.get('p') !== '0';
+  const includePixabay = searchParams.get('x') !== '0';
 
   const [items, setItems] = useState<any[]>([]);
   const [loading, setLoading] = useState(false);
@@ -88,5 +90,13 @@ export default function SearchPage({ searchParams }: { searchParams: { q?: strin
         </div>
       )}
     </div>
+  );
+}
+
+export default function SearchPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <SearchPageContent />
+    </Suspense>
   );
 }

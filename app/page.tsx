@@ -25,7 +25,7 @@ export default async function HomePage() {
   // Fetch trending images
   const [trendingU, trendingP, trendingX] = await Promise.all([
     fetchUnsplashTrending(18),
-    fetchPexelsCurated('trending', 18), // Using curated as trending for Pexels
+    fetchPexelsCurated(18), // Using curated as trending for Pexels
     fetchPixabayTrending(18)
   ])
   const trendingItems = interleaveRoundRobin([trendingU, trendingP, trendingX])
@@ -34,7 +34,7 @@ export default async function HomePage() {
   // For Pexels, we already have fetchPexelsCurated which might be editor's picks
   const [featuredU, featuredP, featuredX] = await Promise.all([
     searchUnsplash('featured', 18), // Using search for featured on Unsplash
-    fetchPexelsCurated('featured', 18), // Using curated as editor's picks for Pexels
+    fetchPexelsCurated(18), // Using curated as editor's picks for Pexels
     searchPixabay('featured', 18) // Using search for featured on Pixabay
   ])
   const featuredItems = interleaveRoundRobin([featuredU, featuredP, featuredX])

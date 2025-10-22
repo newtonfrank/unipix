@@ -1,6 +1,6 @@
 import { env } from '@/lib/env'
 
-export async function fetchPexelsCurated(query: string, count: number): Promise<any[]> {
+export async function fetchPexelsCurated(count: number): Promise<any[]> {
   try {
     const response = await fetch(
       `https://api.pexels.com/v1/curated?per_page=${count}`,
