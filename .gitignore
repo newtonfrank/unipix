@@ -5,3 +5,7 @@ node_modules
 .ds_store
 .DS_Store
 .next/
+*.log
+.cache/
+out/
+dist/
