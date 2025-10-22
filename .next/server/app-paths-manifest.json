@@ -1,7 +1,0 @@
-{
-  "/api/unsplash/search/route": "app/api/unsplash/search/route.js",
-  "/api/pexels/search/route": "app/api/pexels/search/route.js",
-  "/api/pixabay/search/route": "app/api/pixabay/search/route.js",
-  "/page": "app/page.js",
-  "/search/page": "app/search/page.js"
-}
