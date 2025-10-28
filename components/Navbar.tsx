@@ -39,13 +39,16 @@ export default function Navbar() {
       <div className="px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center pt-4">
-            <Image
-              src={currentLogo}
-              alt="Unipix Logo"
-              width={156}
-              height={20}
-              className="p-4 transition-opacity duration-300"
-            />
+            <Link href="/" className="flex items-center select-none focus:outline-none">
+              <Image
+                src={currentLogo}
+                alt="Unipix Logo"
+                width={156}
+                height={20}
+                className="p-4 transition-opacity duration-300"
+                priority
+              />
+            </Link>
           </div>
           
           {/* Desktop menu */}
